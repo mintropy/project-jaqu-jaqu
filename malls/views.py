@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from malls.models import Mall
+from malls.serializers import MallSerializer
+
+
+class MallViewSet(viewsets.ModelViewSet):
+    queryset = Mall.objects.all()
+    serializer_class = MallSerializer
